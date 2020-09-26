@@ -1,0 +1,22 @@
+<h1>Tibia Traveller!</h1>
+
+<%= simple_form_for :search, method: :get do |f| %>
+  <% search = params[:search] %>
+  <%= f.input :origin, placeholder: "from Venore", collection: @cities, include_hidden: false, selected: search ? search[:origin] : 1 %>
+  <%= f.input :destination, placeholder: "to Kazordoon", collection: @cities, include_hidden: false, selected: search ? search[:destination] : 1 %>
+  <%= f.submit "Find best route!" %>
+<% end %>
+
+
+<% if @transportations %>
+  <% @transportations.each do |transportation| %>
+    <p>
+      Pegue o <strong><%= transportation.means %></strong>
+      com <strong><%= transportation.npc_name %> </strong>
+      em <strong><%= transportation.from_city.name %> </strong>
+      para chegar em <strong><%= transportation.to_city.name %> </strong>
+      ao custo de <strong><%= transportation.price %> gps</strong>
+    </p>
+  <% end %>
+<% end %>
+
