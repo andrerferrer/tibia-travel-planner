@@ -23,7 +23,13 @@ cities.each do |city_name|
       
       destination_city = City.find_or_create_by! name: destination[:destination_city]
 
-      Transportation.create!(from_city: city, to_city: destination_city, means: means)
+      Transportation.create!(
+        from_city: city, 
+        to_city: destination_city, 
+        means: means,
+        npc_name: destination[:npc_name],
+        price: destination[:price]
+      )
       
     end
   end
