@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_09_26_175641) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "npc"
+    t.string "npc_name"
     t.index ["from_city_id"], name: "index_transportations_on_from_city_id"
     t.index ["to_city_id"], name: "index_transportations_on_to_city_id"
   end
