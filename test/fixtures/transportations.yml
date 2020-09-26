@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: one
+  to: one
+  means: MyString
+  price: 1
+
+two:
+  from: two
+  to: two
+  means: MyString
+  price: 1

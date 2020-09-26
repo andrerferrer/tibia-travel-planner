@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_125421) do
+ActiveRecord::Schema.define(version: 2020_09_26_143517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +21,17 @@ ActiveRecord::Schema.define(version: 2020_09_26_125421) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "transportations", force: :cascade do |t|
+    t.bigint "from_city_id", null: false
+    t.bigint "to_city_id", null: false
+    t.string "means"
+    t.integer "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_city_id"], name: "index_transportations_on_from_city_id"
+    t.index ["to_city_id"], name: "index_transportations_on_to_city_id"
+  end
+
+  add_foreign_key "transportations", "cities", column: "from_city_id"
+  add_foreign_key "transportations", "cities", column: "to_city_id"
 end
