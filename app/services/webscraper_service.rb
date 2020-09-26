@@ -63,7 +63,7 @@ class WebscraperService
 
           {
             origin: city_name,
-            npc: npc_name,
+            npc_name: npc_name,
             destination_city: destination,
             price: price
           }
