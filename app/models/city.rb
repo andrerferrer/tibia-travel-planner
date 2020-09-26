@@ -18,7 +18,7 @@ class City < ApplicationRecord
       # binding.pry
       common_destinations = self.destinations & destination_city.destinations
       
-      common_destinations.map do |common_destination|
+      return common_destinations.map do |common_destination|
         [
           self.transportations.where(to_city_id: common_destination.id).first,
           common_destination.transportations.where(to_city_id: destination_city.id).first
@@ -27,5 +27,7 @@ class City < ApplicationRecord
         transportations.reduce(0) { |acc, transportation| acc + transportation.price }
       end.first
     end
+
+    transportations
   end
 end
