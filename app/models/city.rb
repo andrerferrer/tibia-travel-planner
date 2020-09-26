@@ -4,6 +4,7 @@ class City < ApplicationRecord
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
 
+  # I REALLY NEED to refactor this.
   def route_to(city)
     destination_city = city.class == City ? city : City.find_by_name(city)
     p destination_city
