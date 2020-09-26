@@ -64,7 +64,7 @@ class WebscraperService
           {
             origin: city_name,
             npc: npc_name,
-            destination: destination,
+            destination_city: destination,
             price: price
           }
         end
