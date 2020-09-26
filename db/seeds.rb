@@ -6,7 +6,7 @@ end
 
 puts "Fetch cities"
 
-cities = WebscraperService::Cities.fetch_cities
+cities = WebscraperService::Cities.fetch
 
 puts "Create cities"
 
