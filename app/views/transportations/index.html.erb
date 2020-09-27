@@ -11,11 +11,11 @@
 <% if @transportations %>
   <% @transportations.each do |transportation| %>
     <p>
-      Pegue o <strong><%= transportation.means %></strong>
-      com <strong><%= transportation.npc_name %> </strong>
-      em <strong><%= transportation.from_city.name %> </strong>
-      para chegar em <strong><%= transportation.to_city.name %> </strong>
-      ao custo de <strong><%= transportation.price %> gps</strong>
+      Take the <strong><%= transportation.means %></strong>
+      with <strong><%= transportation.npc_name %> </strong>
+      at <strong><%= transportation.from_city.name %> </strong>
+      to get to <strong><%= transportation.to_city.name %> </strong>
+      by the price of <strong><%= transportation.price %> gps</strong>
     </p>
   <% end %>
 <% end %>
