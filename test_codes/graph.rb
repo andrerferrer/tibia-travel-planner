@@ -1,3 +1,6 @@
+# I took this solution from this tutorial
+# https://www.rubyguides.com/2017/05/graph-theory-in-ruby/
+
 require 'rgl/adjacency'
 require 'rgl/dijkstra'
 
