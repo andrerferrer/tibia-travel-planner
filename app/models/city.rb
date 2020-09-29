@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  has_many :transportations, foreign_key: :from_city_id
+  has_many :transportations, foreign_key: :from_city_id, dependent: :destroy
   has_many :destinations, through: :transportations, source: :to_city
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
@@ -22,7 +22,7 @@ class City < ApplicationRecord
     edge_weights.each { |(city1, city2), _weight| graph.add_edge(city1, city2) }
 
     shortest_path = graph.dijkstra_shortest_path(edge_weights, self.id, city.id)
-
+    
     final_transportations = shortest_path.map.with_index do |city_id, index|
         Transportation.find_by(
           from_city_id: city_id,
